@@ -1,0 +1,9 @@
+# Global 
+.DS_Store
+
+# Arduino 
+.pio
+.clang_complete
+.gcc-flags.json
+.ccls
+.a
