@@ -5,18 +5,20 @@
 
 
 
-Alarm::Alarm(byte pin_led, byte pin_buzzer){
-    this -> led = new Led(pin_led);
+Alarm::Alarm(byte pin_led_green, byte pin_led_red, byte pin_buzzer){
+    this -> led_green = new Led(pin_led_green);
+    this -> led_red = new Led(pin_led_red);
     this -> buzzer = new Buzzer(pin_buzzer);
 }
 
-void Alarm::detect_object(int distance){
-  if(distance >= 90){
+void Alarm::detect_object(int distance, int parameter){
+  if(distance >= parameter){
     this -> buzzer -> silence();
-    this -> led -> bright_led(distance);
+    this -> led_green -> turn_on_led();
   }
   else{
-    this -> led -> blink_led(200);
+    this -> led_green -> turn_off_led();
+    this -> led_red -> blink_led(200);
     this -> buzzer -> make_sound();
   }
 }

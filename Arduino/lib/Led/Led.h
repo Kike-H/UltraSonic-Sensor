@@ -9,7 +9,8 @@ class Led{
   public:
     Led(byte _pin_led);
     void blink_led(int time);
-    void bright_led(int distance);
+    void turn_on_led();
+    void turn_off_led();
 };
 
 #endif

@@ -13,7 +13,12 @@ void Led::blink_led(int time){
   delay(time);
 }
 
-void Led::bright_led(int distance){
-  int brightness = map(distance, 0, 358, 255,0);
-  analogWrite(_pin_led,brightness);
+void Led::turn_on_led(){
+  digitalWrite(_pin_led, HIGH);
 }
+
+void Led::turn_off_led(){
+  digitalWrite(_pin_led, LOW);
+}
+
+
