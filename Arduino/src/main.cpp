@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include <Led.h>
 #include <USSensor.h>
 #include <Buzzer.h>
