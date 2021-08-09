@@ -14,7 +14,7 @@ long USSensor::calculate_distance(){
   digitalWrite(_trig_pin, LOW);
   _duration = pulseIn(_echo_pin, HIGH);
   _distance = _duration/58.2;
-  delay(200);
+  delay(400);
   return _distance;
 }
 

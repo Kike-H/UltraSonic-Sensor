@@ -1,18 +1,4 @@
-# Global 
-.DS_Store
-
-# Arduino 
-.pio
-.clang_complete
-.gcc-flags.json
-.ccls
-.a
-
-# Backend 
-venv
-__pycache__
-
-# Frontend
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
