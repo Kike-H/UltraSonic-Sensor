@@ -1,0 +1,13 @@
+asgiref==3.4.1
+bidict==0.21.2
+click==8.0.1
+fastapi==0.68.0
+fastapi-socketio==0.0.8
+h11==0.12.0
+pydantic==1.8.2
+pyserial==3.5
+python-engineio==4.2.1
+python-socketio==5.4.0
+starlette==0.14.2
+typing-extensions==3.10.0.0
+uvicorn==0.14.0
