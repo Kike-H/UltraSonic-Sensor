@@ -1,9 +1,9 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
 
 import serial, time
 
-ser = serial.Serial('/dev/cu.usbserial-1410', 9600, timeout=4)
+ser = serial.Serial('/dev/cu.usbserial-1410', 9600, timeout=3000)
 
 origins = ["http://localhost:3000"]
 
@@ -32,4 +32,18 @@ def distance():
         return {"distance":distance}
     return {"distance":distance}
 
+
+@app.websocket('/ws')
+async def websocket(websocket:WebSocket):
+    print("Acepting conection")
+    await websocket.accept()
+    print("Acepted")
+    while True:
+        try:
+            data = ser.readline()
+            distance = str(data.decode("utf-8"))
+            await websocket.send_text(distance)
+        except:
+            pass
+            break
 
